@@ -40,6 +40,7 @@ header {
   height: 40px;
   width: 40px;
   border-radius: 1000%;
+  cursor: pointer;
 }
 
 nav {
