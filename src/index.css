@@ -13,6 +13,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -31,16 +37,22 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: #d9d9d9;
-  padding: 10px 0;
+  padding: 10px 20px;
   z-index: 10;
+  box-sizing: border-box;
 }
 
 .logo {
-  padding-left: 2px;
   height: 40px;
   width: 40px;
-  border-radius: 1000%;
+  border-radius: 50%;
   cursor: pointer;
+}
+
+.menu-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 nav {
@@ -48,39 +60,74 @@ nav {
   gap: 20px;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
 button {
-  border: 0;
+  border: none;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
   cursor: pointer;
-  transition: border-color 0.25s;
-  color: #000000;
   background-color: #d9d9d9;
+  color: #000;
+  transition: background-color 0.3s;
+}
+button:hover {
+  background-color: #c0c0c0;
 }
 
-.menu-container {
-  flex: 1;
+/* layout geral da página */
+.page-container {
   display: flex;
-  justify-content: center;
-  margin-right: 50px; /* pra afastar um pouco dos botões da borda */
+  flex-direction: column;
+  min-height: 100vh;
 }
 
+.content-wrap {
+  flex: 1;
+  padding-top: 80px; /* para o header fixo */
+  padding-bottom: 40px; /* espaço pro rodapé */
+  box-sizing: border-box;
+}
+
+/* rodapé ajustado */
+.rodape {
+  position: relative;
+  width: 100%; /* melhor que 100vw nesse caso */
+  background-color: #1c1c1c;
+  color: white;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+
+.bolinhas {
+  display: flex;
+  gap: 10px;
+}
+
+.bolinha {
+  width: 16px;
+  height: 16px;
+  background-color: #d3d3d3;
+  border-radius: 50%;
+}
+
+/* se ainda usar .titulo pra algo específico, mantenha assim */
 .titulo {
-  margin-top: 100px; /* espaço para o header fixo */
   text-align: center;
+}
+
+/* Garante que nada ultrapasse a largura da tela */
+* {
+  box-sizing: border-box;
+}
+
+/* Zera margem lateral padrão do navegador */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }

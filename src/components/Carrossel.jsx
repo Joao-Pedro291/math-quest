@@ -1,21 +1,24 @@
+import { useState } from "react";
 import Slider from "react-slick";
 import "./Carrossel.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import img1 from "../assets/img1.jpg";
-import img2 from "../assets/img2.jpg";
-import img3 from "../assets/img3.jpg";
-
-function Carrossel() {
-  const imagens = [img1, img2, img3];
+function Carrossel({ itens = [], mostrarThumbs = true, clicavel = true }) {
+  const [selecionado, setSelecionado] = useState(null);
 
   const settings = {
     customPaging: function (i) {
-      return <img src={imagens[i]} alt={`Thumb ${i}`} className="img-thumb" />;
+      return mostrarThumbs && itens[i].imagem ? (
+        <img src={itens[i].imagem} alt={`Thumb ${i}`} className="img-thumb" />
+      ) : (
+        <div className="custom-dot" />
+      );
     },
     dots: true,
-    dotsClass: "slick-dots slick-thumb",
+    dotsClass: mostrarThumbs
+      ? "slick-dots slick-thumb"
+      : "slick-dots slick-default",
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -25,12 +28,39 @@ function Carrossel() {
   return (
     <div className="slider-wrapper">
       <Slider {...settings}>
-        {imagens.map((src, index) => (
-          <div key={index}>
-            <img src={src} alt={`Slide ${index}`} className="img-grande" />
+        {itens.map((item, index) => (
+          <div key={index} className="carrossel-slide">
+            <img
+              src={item.imagem}
+              alt={item.nome || `Slide ${index}`}
+              className="img-grande"
+              onClick={clicavel ? () => setSelecionado(item) : undefined}
+              style={{ cursor: clicavel ? "pointer" : "default" }}
+            />
+            {item.nome && (
+              <div className="info">
+                <h3>{item.nome}</h3>
+                <p>
+                  <em>{item.descricao}</em>
+                </p>
+              </div>
+            )}
           </div>
         ))}
       </Slider>
+
+      {clicavel && selecionado && (
+        <div className="modal-overlay" onClick={() => setSelecionado(null)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <h2>{selecionado.nome}</h2>
+            <p>
+              <em>{selecionado.descricao}</em>
+            </p>
+            <p>{selecionado.info}</p>
+            <button onClick={() => setSelecionado(null)}>Fechar</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
