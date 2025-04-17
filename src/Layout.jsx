@@ -5,6 +5,13 @@ import "./App.css";
 function Layout() {
   const navigate = useNavigate();
 
+  function scrollParaContato() {
+    const contato = document.getElementById("contato");
+    if (contato) {
+      contato.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
   return (
     <div className="page-container">
       <header>
@@ -20,7 +27,7 @@ function Layout() {
             <button onClick={() => navigate("/")}>Início</button>
             <button onClick={() => navigate("/download")}>Download</button>
             <button onClick={() => navigate("/sobre")}>Sobre Nós</button>
-            <button onClick={() => navigate("/contato")}>Contato</button>
+            <button onClick={scrollParaContato}>Contato</button>
           </nav>
         </div>
       </header>
@@ -29,7 +36,7 @@ function Layout() {
         <Outlet />
       </main>
 
-      <footer className="rodape">
+      <footer className="rodape" id="contato">
         <div>
           <p>
             Fale conosco! <br />
