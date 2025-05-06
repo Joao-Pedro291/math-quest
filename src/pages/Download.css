@@ -31,15 +31,15 @@
   .download-btn {
     padding: 10px 20px;
     font-size: 1rem;
-    border: 1px solid #000;
-    background-color: #f0f0f0;
+    border: 1px solid #0a84b1;
+    background-color: #0a84b1;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s;
   }
   
   .download-btn:hover {
-    background-color: #dcdcdc;
+    background-color: #0a84b1;
   }
   
   

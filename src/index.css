@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: #000000;
-  background-color: #a8a8a8;
+  background-color: rgb(255, 255, 255);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -36,7 +36,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #d9d9d9;
+  background-color: 		#0a84b1;
   padding: 10px 20px;
   z-index: 10;
   box-sizing: border-box;
@@ -67,12 +67,12 @@ button {
   font-weight: 500;
   font-family: inherit;
   cursor: pointer;
-  background-color: #d9d9d9;
-  color: #000;
+  background-color: #0a84b1;
+  color: white;
   transition: background-color 0.3s;
 }
 button:hover {
-  background-color: #c0c0c0;
+  background-color: #0a84b1;
 }
 
 /* layout geral da página */
@@ -93,7 +93,7 @@ button:hover {
 .rodape {
   position: relative;
   width: 100%; /* melhor que 100vw nesse caso */
-  background-color: #1c1c1c;
+  background-color: #0a84b1;
   color: white;
   padding: 10px 30px;
   display: flex;
@@ -111,7 +111,7 @@ button:hover {
 .bolinha {
   width: 16px;
   height: 16px;
-  background-color: #d3d3d3;
+  background-color: #ffffff;
   border-radius: 50%;
 }
 

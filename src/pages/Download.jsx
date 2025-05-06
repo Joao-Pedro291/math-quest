@@ -17,7 +17,7 @@ function Download() {
       </div>
 
       <div className="info-wrapper">
-        <h2>MathQuest</h2>
+        <h2 style={{color: "#0a84b1"}}> MathQuest</h2>
         <p>
           Embarque nessa aventura cheia de monstros, montanhas e matemática ou
           não sla eu sou do visual nao do escrito mano! no caso eu sou de dev

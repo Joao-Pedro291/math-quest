@@ -1,6 +1,6 @@
 .pagina-downloads {
   padding: 100px 20px 40px;
-  background-color: #eeeeee;
+  background-color: #ffffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -17,7 +17,7 @@
   width: 90%;
   max-width: 600px;
   background-color: #ffffff;
-  border: 2px solid #999;
+  border: 2px solid #0a84b1;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -30,7 +30,7 @@
 }
 
 .pagina-downloads .download-btn {
-  background-color: #d9d9d9;
+  background-color: #0a84b1;
   border: none;
   padding: 8px 16px;
   font-weight: bold;
@@ -40,10 +40,10 @@
 }
 
 .pagina-downloads .download-btn:hover {
-  background-color: #bfbfbf;
+  background-color: #0a84b1;
 }
 
 .pagina-downloads .card-row {
   height: 60px;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #0a84b1;
 }
