@@ -1,4 +1,10 @@
+import logo from "../assets/logo.png";
+
 function Home() {
-  return <h1  style={{color: "#0a84b1"}}>Math Quest</h1>;
+  return (
+    <div className="logoHome">
+      <img src={logo} alt="logo do math quest" />
+    </div>
+  );
 }
 export default Home;

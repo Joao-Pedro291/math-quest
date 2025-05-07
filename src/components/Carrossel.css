@@ -97,3 +97,14 @@
   width: 90%;
   text-align: center;
 }
+
+/* Exemplo: dentro de Download.css */
+.carrossel-equipe .slick-prev:before,
+.carrossel-equipe .slick-next:before {
+  color: #0a84b1 !important;
+}
+
+.carousel-wrapper .slick-prev:before,
+.carousel-wrapper .slick-next:before {
+  color: #0a84b1 !important;
+}

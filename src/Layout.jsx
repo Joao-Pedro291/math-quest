@@ -1,5 +1,6 @@
 import { Outlet, useNavigate } from "react-router-dom";
 import logo from "./assets/logo.png";
+import insta from "./assets/insta.png";
 import "./App.css";
 
 function Layout() {
@@ -40,17 +41,28 @@ function Layout() {
         <div>
           <p>
             Fale conosco! <br />
-            <em>email@email.com</em>
+            <em>quatiarchive@email.com</em>
           </p>
         </div>
-        <div className="bolinhas">
-          <div className="bolinha" />
-          <div className="bolinha" />
+
+        <div className="container-bolinhas">
+          <div className="bolinhas">
+            <div className="bolinha">
+              <img src={insta} alt="logo do instagram" />
+            </div>
+          </div>
         </div>
-        <div style={{ textAlign: "right" }}>
-          <strong>logotipo</strong>
-          <br />
-          <small>mini aqui</small>
+
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            alignItems: "center",
+          }}
+        >
+          <small>
+            <img src={logo} alt="logo math quest" className="logo" />
+          </small>
         </div>
       </footer>
     </div>

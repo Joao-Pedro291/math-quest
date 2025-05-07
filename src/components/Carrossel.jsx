@@ -7,23 +7,24 @@ import "slick-carousel/slick/slick-theme.css";
 function Carrossel({ itens = [], mostrarThumbs = true, clicavel = true }) {
   const [selecionado, setSelecionado] = useState(null);
 
-  const settings = {
-    customPaging: function (i) {
-      return mostrarThumbs && itens[i].imagem ? (
-        <img src={itens[i].imagem} alt={`Thumb ${i}`} className="img-thumb" />
-      ) : (
-        <div className="custom-dot" />
-      );
-    },
-    dots: true,
-    dotsClass: mostrarThumbs
-      ? "slick-dots slick-thumb"
-      : "slick-dots slick-default",
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
+const settings = {
+  arrows: true,
+  customPaging: function (i) {
+    return mostrarThumbs && itens[i].imagem ? (
+      <img src={itens[i].imagem} alt={`Thumb ${i}`} className="img-thumb" />
+    ) : (
+      <div className="custom-dot" />
+    );
+  },
+  dots: true,
+  dotsClass: mostrarThumbs
+    ? "slick-dots slick-thumb"
+    : "slick-dots slick-default",
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+};
 
   return (
     <div className="slider-wrapper">
